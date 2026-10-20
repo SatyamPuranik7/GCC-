@@ -84,14 +84,3 @@ npm run preview
 ```
 
 ---
-
-## 🚢 Deployment (Vercel)
-
-1. Push your code to GitHub (ensure `.env` is ignored).
-2. Go to [Vercel](https://vercel.com/new) and import the repository.
-3. Framework preset will automatically be detected as **Vite**.
-4. In **Settings → Environment Variables**, add:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-   - `VITE_OPENROUTER_API_KEY`
-5. Click **Deploy**.
