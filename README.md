@@ -4,22 +4,28 @@
 
 ---
 
+## 🌐 Live Demo
+
+Try the deployed app here: [GCC Atlas](https://gcc-ashen.vercel.app/)
+
+---
+
 ## 📌 Executive Summary
 
-India is home to **2,000+ Global Capability Centres (GCCs)** driving over **$64 Billion in export revenue**, yet enterprise location decisions remain plagued by fragmented data, conflicting reports (1,600 vs 2,200 GCCs), and broker commissions. 
+India is home to **2,000+ Global Capability Centres (GCCs)** driving over **$64 Billion in export revenue**, yet enterprise location decisions remain plagued by fragmented data, conflicting reports (1[...]
 
-**GCC Atlas** brings clarity by unifying verified empirical data across **45 candidate Indian cities** into an interactive, deterministic decision engine. Rather than relying on static slide decks or black-box rankings, GCC Atlas normalizes candidate locations against a company's specific headcount, seniority mix, and business priorities.
+**GCC Atlas** brings clarity by unifying verified empirical data across **45 candidate Indian cities** into an interactive, deterministic decision engine. Rather than relying on static slide decks or [...]
 
 ---
 
 ## 🚀 Key Features
 
 - **🎯 Interactive Plan Wizard (5 Steps):** Configure business function mix (Tech, Finance, Ops), 1-year and 3-year headcount, and custom factor weights (1–5).
-- **📊 Deterministic Recommendation Engine:** Mathematical normalization across 45 cities with transparent scoring, coverage bars, and source citations. AI explains the trade-offs; math calculates the rank.
+- **📊 Deterministic Recommendation Engine:** Mathematical normalization across 45 cities with transparent scoring, coverage bars, and source citations. AI explains the trade-offs; math calculates t[...]
 - **⚖️ Side-by-Side Comparison Matrix:** Compare 2 to 5 candidate cities across identical metric definitions and units. Missing data points are highlighted rather than assumed to be zero.
-- **🏢 Deep City Profiles (6 Tabs):** Overview, Randstad salary benchmarks across 3 seniority tiers, JLL Grade A office rents and vacancy rates, verified GCC center counts, regional service providers, and NSWS regulatory checklists.
+- **🏢 Deep City Profiles (6 Tabs):** Overview, Randstad salary benchmarks across 3 seniority tiers, JLL Grade A office rents and vacancy rates, verified GCC center counts, regional service provider[...]
 - **💰 Partial Operating Cost Calculator:** Model bottom-up 1-year people CTC and Grade A office lease estimates with an explicit exclusions audit trail.
-- **🤖 Ask Atlas (AI Assistant):** Conversational AI grounded in database records via OpenRouter (Gemini Flash 1.5). Features strict citation requirements and honest refusals when data is unavailable.
+- **🤖 Ask Atlas (AI Assistant):** Conversational AI grounded in database records via OpenRouter (Gemini Flash 1.5). Features strict citation requirements and honest refusals when data is unavailabl[...]
 - **📑 Integrated Executive Pitch Deck:** Built-in presentation accessible at `/deck` covering the problem, opportunity prioritization scorecard, wedge strategy, and multi-stakeholder positioning.
 
 ---
