@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-ivory text-navy font-sans antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+@layer components {
+  /* Shimmer skeleton — only used while data is actually loading */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #F0EAE0 0%,
+      #FAF7F2 40%,
+      #FAF7F2 60%,
+      #F0EAE0 100%
+    );
+    background-size: 800px 100%;
+    @apply animate-shimmer rounded-lg;
+  }
+
+  /* Glass card */
+  .glass {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.82);
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-ivory-border;
+  }
+  .card-interactive {
+    @apply card transition-all duration-200 hover:shadow-card-hover hover:-translate-y-0.5 cursor-pointer;
+  }
+
+  /* Score bar fill */
+  .score-bar {
+    @apply h-1.5 rounded-full bg-teal-muted overflow-hidden;
+  }
+  .score-fill {
+    @apply h-full rounded-full bg-teal transition-all duration-700 ease-out;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; }
+  .card { box-shadow: none !important; border: 1px solid #ccc !important; }
+  a { color: inherit !important; }
+}

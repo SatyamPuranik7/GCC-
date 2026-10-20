@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCC Atlas — Product Management Executive Pitch Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #FAF7F2;
+      color: #1B2A4A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .slide {
+      width: 16in;
+      height: 9in;
+      padding: 0.8in 1in;
+      page-break-after: always;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      background-color: #FAF7F2;
+    }
+    .slide-dark {
+      background: linear-gradient(135deg, #111C33 0%, #1B2A4A 60%, #0F766E 100%);
+      color: #FFFFFF;
+    }
+    .tag {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #0F766E;
+      margin-bottom: 8px;
+    }
+    .slide-dark .tag {
+      color: #2DD4BF;
+    }
+    h1.title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 38pt;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1B2A4A;
+      margin-bottom: 6px;
+    }
+    .slide-dark h1.title {
+      color: #FFFFFF;
+      font-size: 46pt;
+    }
+    p.subtitle {
+      font-size: 14pt;
+      color: #4A5D7E;
+      margin-bottom: 24px;
+    }
+    .slide-dark p.subtitle {
+      color: #99F6E4;
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E5DDD5;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(27, 42, 74, 0.04);
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .table-container {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid #E5DDD5;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11pt;
+    }
+    th {
+      background-color: #1B2A4A;
+      color: #FFFFFF;
+      text-align: left;
+      padding: 14px 18px;
+      font-weight: 600;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #E5DDD5;
+      vertical-align: top;
+      color: #1B2A4A;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-teal {
+      background-color: #CCFBF1;
+      color: #0F766E;
+    }
+    .badge-amber {
+      background-color: #FEF3C7;
+      color: #B45309;
+    }
+    .badge-red {
+      background-color: #FEE2E2;
+      color: #B91C1C;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid #E5DDD5;
+      font-size: 10pt;
+      color: #8B9DC3;
+    }
+    .slide-dark .footer {
+      border-top-color: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #0F766E;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: background 0.2s;
+    }
+    .print-btn:hover {
+      background-color: #14B8A6;
+    }
+    @media print {
+      .print-btn {
+        display: none !important;
+      }
+      body {
+        background: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">📥 Save / Print as PDF</button>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 1: Title & Executive Summary
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide slide-dark">
+    <div>
+      <span class="tag">Executive Pitch Deck · Product Management Intern Assignment</span>
+      <h1 class="title">GCC ATLAS</h1>
+      <p class="subtitle">The Single Source of Truth for India’s 2,000+ Global Capability Centre Ecosystem</p>
+      
+      <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 16px; padding: 24px; margin-top: 20px; margin-bottom: 30px; line-height: 1.6; font-size: 13pt;">
+        <strong>Executive Thesis:</strong> Establishing a GCC in India requires aligning strategy, finance, HR, legal, and real estate. Today, these teams make multimillion-dollar 10-year commitments based on conflicting consultant reports, opaque broker commissions, and informal referral networks. <strong>GCC Atlas</strong> bridges this information asymmetry by delivering an evidence-backed, deterministic decision engine grounded in verified empirical data.
+      </div>
+
+      <div class="grid-3">
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 20px; border-radius: 14px;">
+          <div style="font-size: 32pt; font-family: 'Instrument Serif', Georgia; color: #2DD4BF; font-weight: bold;">2,000+</div>
+          <div style="font-size: 13pt; font-weight: 600; margin-top: 4px;">Operating GCCs in India</div>
+          <div style="font-size: 10pt; color: #CBD5E1; margin-top: 4px;">$64.6B export revenue by 2026; over 50% of the world's capability centers.</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 20px; border-radius: 14px;">
+          <div style="font-size: 32pt; font-family: 'Instrument Serif', Georgia; color: #FBBF24; font-weight: bold;">6–9 Mos</div>
+          <div style="font-size: 13pt; font-weight: 600; margin-top: 4px;">Average Decision Latency</div>
+          <div style="font-size: 10pt; color: #CBD5E1; margin-top: 4px;">Strategy teams spend $1.5M+ navigating fragmented advisor hearsay.</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 20px; border-radius: 14px;">
+          <div style="font-size: 32pt; font-family: 'Instrument Serif', Georgia; color: #FFFFFF; font-weight: bold;">45 Cities</div>
+          <div style="font-size: 13pt; font-weight: 600; margin-top: 4px;">Curated Candidate Markets</div>
+          <div style="font-size: 10pt; color: #CBD5E1; margin-top: 4px;">Seeded with verified JLL, Randstad, GCCPROs, and Zinnov evidence.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Live Prototype Connected to Supabase & OpenRouter</span>
+      <span>Slide 1 / 7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 2: The Problem Space
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div>
+      <span class="tag">1. Problem Definition</span>
+      <h1 class="title">Anatomy of a $60B Information Asymmetry</h1>
+      <p class="subtitle">High stakes, conflicting figures, and opaque referral black boxes</p>
+
+      <div class="grid-3" style="margin-top: 20px;">
+        <div class="card" style="border-top: 4px solid #B91C1C;">
+          <div style="font-size: 15pt; font-weight: 700; color: #B91C1C; margin-bottom: 12px;">01. Conflicting Truths</div>
+          <p style="font-size: 11pt; color: #4A5D7E; line-height: 1.6;">
+            Different reports quote wildly divergent counts (ranging from 1,600 to 2,200 GCCs). No single public registry tracks which companies operate where, which specific functions they house, or which tier-2 cities are truly scaling versus marketing hype.
+          </p>
+        </div>
+        <div class="card" style="border-top: 4px solid #D97706;">
+          <div style="font-size: 15pt; font-weight: 700; color: #D97706; margin-bottom: 12px;">02. Misaligned Incentives</div>
+          <p style="font-size: 11pt; color: #4A5D7E; line-height: 1.6;">
+            Companies deal with an opaque chain: management consultants, local lawyers, tenant brokers, and recruiters. Brokers push high-commission leases; recruiters benefit from high employee churn and wage inflation.
+          </p>
+        </div>
+        <div class="card" style="border-top: 4px solid #1B2A4A;">
+          <div style="font-size: 15pt; font-weight: 700; color: #1B2A4A; margin-bottom: 12px;">03. Costly Trial & Error</div>
+          <p style="font-size: 11pt; color: #4A5D7E; line-height: 1.6;">
+            New entrants spend $1.5M–$3M on retainers and roadshows, yet end up relying on informal WhatsApp networks, outdated annual PDFs, and golf-course referrals to make irreversible 10-year commitments.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 28px; background-color: #F0FDFA; border-color: #CCFBF1;">
+        <p style="font-size: 11.5pt; color: #0F766E; line-height: 1.5;">
+          <strong>What they do today:</strong> Pay $200k+ for static Big-4 slide decks, hire local brokers who only show properties they represent, or spend 6 months conducting subjective executive tours.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Slide 2 / 7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 3: Who is Hurt & The Quantified Impact
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div>
+      <span class="tag">2. Impact Analysis</span>
+      <h1 class="title">Who is Hurt and What Does It Cost?</h1>
+      <p class="subtitle">Quantifying the damage across four key ecosystem stakeholders</p>
+
+      <div class="table-container" style="margin-top: 15px;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">Stakeholder</th>
+              <th style="width: 22%;">The Quantified Impact</th>
+              <th style="width: 33%;">The Friction & How They Are Hurt</th>
+              <th style="width: 20%;">What They Do Today</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Global Enterprises</strong><br><span style="font-size: 9pt; color: #8B9DC3;">CFOs, VP Strategy, Real Estate</span></td>
+              <td><strong style="color: #B91C1C; font-size: 12pt;">$1.5M – $3M</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Wasted Retainers & Launch Delays</span></td>
+              <td>6–9 month delays in operational launch. Multimillion-dollar risk of picking saturated micro-markets suffering 25%+ annual wage attrition.</td>
+              <td>Retain Big-4 consultancies, conduct exhaustive multi-city tours, rely on referral hearsay.</td>
+            </tr>
+            <tr>
+              <td><strong>Talent & HR Leaders</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Chief People Officers, Heads of Talent</span></td>
+              <td><strong style="color: #D97706; font-size: 12pt;">30–45 Days</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Added Time-to-Hire & Budget Overrun</span></td>
+              <td>Blind to true cross-industry salary benchmarks; surprise wage inflation and recruiting ramp failures in Tier-1 saturation zones.</td>
+              <td>Rely on outdated annual salary PDFs and anecdotal recruiter claims.</td>
+            </tr>
+            <tr>
+              <td><strong>Emerging Tier-2 Hubs</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Coimbatore, Vadodara, Kochi, etc.</span></td>
+              <td><strong style="color: #0F766E; font-size: 12pt;">Billions in Lost FDI</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Missed Capital Investment</span></td>
+              <td>Tier-2 cities offer 30–40% lower costs, stable talent, and high retention, but lose deals because their verified hiring & lease data is unindexed.</td>
+              <td>Fund expensive international delegations and roadshows with low direct conversion.</td>
+            </tr>
+            <tr>
+              <td><strong>Specialized Regional Providers</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Boutique Legal, EOR, Real Estate</span></td>
+              <td><strong style="color: #1B2A4A; font-size: 12pt;">High CAC</strong><br><span style="font-size: 9pt; color: #8B9DC3;">Trust Deficit vs Big-4 Moats</span></td>
+              <td>High-quality regional operators are crowded out by Tier-1 consultancies relying on legacy Rolodexes rather than performance track records.</td>
+              <td>Rely entirely on personal networks and unpredictable word-of-mouth referrals.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Slide 3 / 7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 4: The 4 Solution Options Evaluated
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div>
+      <span class="tag">3. Opportunity Assessment</span>
+      <h1 class="title">Evaluating 4 Product Directions</h1>
+      <p class="subtitle">Where can a single source of truth disrupt the Indian GCC expansion lifecycle?</p>
+
+      <div class="grid-2" style="margin-top: 15px;">
+        <div class="card" style="border: 2px solid #0F766E; background-color: #F0FDFA;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 14pt; font-weight: 700; color: #0F766E;">Option 1: Location Decision Engine (GCC Atlas)</div>
+            <span class="badge badge-teal">Selected Wedge</span>
+          </div>
+          <div style="font-size: 10.5pt; font-weight: 600; color: #1B2A4A; margin-bottom: 6px;">Apex Decision Wedge</div>
+          <p style="font-size: 10.5pt; color: #4A5D7E; line-height: 1.5;">
+            An interactive multi-factor decision tool evaluating 45 candidate cities against custom hiring plans, Randstad salary benchmarks, JLL Grade A office rents, and verified center presence.
+          </p>
+          <div style="margin-top: 12px; font-size: 9.5pt; font-weight: 600; color: #0F766E;">
+            ✓ High C-suite willingness to pay ($20M+ de-risking) · Seedable immediately with empirical data
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 14pt; font-weight: 700; color: #1B2A4A;">Option 2: Verified GCC Registry & Org Graph</div>
+            <span class="badge badge-amber">Phase 2 Candidate</span>
+          </div>
+          <div style="font-size: 10.5pt; font-weight: 600; color: #1B2A4A; margin-bottom: 6px;">'LinkedIn for Indian GCCs'</div>
+          <p style="font-size: 10.5pt; color: #4A5D7E; line-height: 1.5;">
+            A searchable database indexing all 2,000+ operating centers in India, parent companies, headcount tiers, business functions, and leadership rosters.
+          </p>
+          <div style="margin-top: 12px; font-size: 9.5pt; color: #D97706;">
+            ⚠ Severe data cold-start friction (private RoC filings, NDAs); passive search utility without decision flows.
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 14pt; font-weight: 700; color: #1B2A4A;">Option 3: Service Provider Performance Marketplace</div>
+            <span class="badge badge-amber">Phase 2/3 Candidate</span>
+          </div>
+          <div style="font-size: 10.5pt; font-weight: 600; color: #1B2A4A; margin-bottom: 6px;">'Clutch / G2 for GCC Vendors'</div>
+          <p style="font-size: 10.5pt; color: #4A5D7E; line-height: 1.5;">
+            A curated ratings, reviews, and transaction platform for legal, EOR, real estate, workplace design, and recruitment partners.
+          </p>
+          <div style="margin-top: 12px; font-size: 9.5pt; color: #B91C1C;">
+            ⚠ Brutal 2-sided chicken-and-egg liquidity trap; vendor directories almost always corrupt into pay-to-play ads.
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-size: 14pt; font-weight: 700; color: #1B2A4A;">Option 4: Regulatory & Subsidy Concierge</div>
+            <span class="badge badge-amber">Phase 3 Long-Term</span>
+          </div>
+          <div style="font-size: 10.5pt; font-weight: 600; color: #1B2A4A; margin-bottom: 6px;">'TurboTax for GCC Incorporation'</div>
+          <p style="font-size: 10.5pt; color: #4A5D7E; line-height: 1.5;">
+            A digital compliance workflow mapping state IT subsidies, stamp-duty waivers, ROC entity formation, and NSWS statutory approval pathways.
+          </p>
+          <div style="margin-top: 12px; font-size: 9.5pt; color: #D97706;">
+            ⚠ Deep bureaucratic dependency across 15+ states; corporate legal counsel will always insist on human law firms for statutory liability.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Slide 4 / 7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 5: Prioritization & The "Strong Why"
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div>
+      <span class="tag">4. Prioritization Framework</span>
+      <h1 class="title">Why Option 1 Was Chosen: The "Strong Why"</h1>
+      <p class="subtitle">A rigorous PM evaluation comparing apex leverage, cold-start feasibility, and trust defensibility</p>
+
+      <div class="grid-3" style="margin-top: 10px; margin-bottom: 18px;">
+        <div class="card" style="border: 1.5px solid #0F766E;">
+          <div style="font-size: 12pt; font-weight: 700; color: #0F766E; margin-bottom: 6px;">1. The Apex Commitment</div>
+          <p style="font-size: 9.5pt; color: #4A5D7E; line-height: 1.5;">
+            Location is the <strong>single irreversible gateway decision</strong>. You cannot hire leadership, sign leases, or file entity incorporation until geography is locked in. Location controls 80% of downstream capital.
+          </p>
+        </div>
+        <div class="card" style="border: 1.5px solid #0F766E;">
+          <div style="font-size: 12pt; font-weight: 700; color: #0F766E; margin-bottom: 6px;">2. Overcoming the Cold Start</div>
+          <p style="font-size: 9.5pt; color: #4A5D7E; line-height: 1.5;">
+            Marketplaces and directories require thousands of active reviews and vendor deal sheets. In contrast, location intelligence can be <strong>curated immediately from empirical public benchmarks</strong> (JLL, Randstad, GCCPROs).
+          </p>
+        </div>
+        <div class="card" style="border: 1.5px solid #0F766E;">
+          <div style="font-size: 12pt; font-weight: 700; color: #0F766E; margin-bottom: 6px;">3. Controlling the Funnel</div>
+          <p style="font-size: 9.5pt; color: #4A5D7E; line-height: 1.5;">
+            By winning enterprise C-suites at Day 0, GCC Atlas earns the right to orchestrate downstream provider RFPs and regulatory filings as high-margin expansion products in subsequent phases.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Evaluation Dimension</th>
+              <th style="background-color: #0F766E;">Option 1: Location Engine</th>
+              <th>Option 2: GCC Registry</th>
+              <th>Option 3: Marketplace</th>
+              <th>Option 4: Regulatory Concierge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Apex Decision Leverage</strong></td>
+              <td style="color: #0F766E; font-weight: bold; background: #F0FDFA;">Critical (Day 0 Gateway)</td>
+              <td>Moderate (Passive Research)</td>
+              <td>Downstream (Day 90+)</td>
+              <td>Late Stage (Day 120+)</td>
+            </tr>
+            <tr>
+              <td><strong>2. Cold-Start Data Feasibility</strong></td>
+              <td style="color: #0F766E; font-weight: bold; background: #F0FDFA;">High (Public Empirical Seed)</td>
+              <td>Low (Data behind NDAs)</td>
+              <td>Very Low (2-Sided Trap)</td>
+              <td>Low (15 State Portals)</td>
+            </tr>
+            <tr>
+              <td><strong>3. Willingness to Pay (WTP)</strong></td>
+              <td style="color: #0F766E; font-weight: bold; background: #F0FDFA;">High ($20M Risk Reduction)</td>
+              <td>Moderate (Directory Fee)</td>
+              <td>High (Transaction Cut)</td>
+              <td>Moderate (Legal Retains)</td>
+            </tr>
+            <tr>
+              <td><strong>4. Defensibility Against Ad Bias</strong></td>
+              <td style="color: #0F766E; font-weight: bold; background: #F0FDFA;">High (Deterministic Math)</td>
+              <td>Moderate (Stale Scraping)</td>
+              <td>Low (Pay-to-Play Ad Trap)</td>
+              <td>Moderate (Policy Shifts)</td>
+            </tr>
+            <tr>
+              <td><strong>Strategic Recommendation</strong></td>
+              <td style="color: #0F766E; font-weight: bold; background: #F0FDFA;">WINNING PRODUCT WEDGE</td>
+              <td>Phase 2 Expansion</td>
+              <td>Phase 2 / 3 Marketplace</td>
+              <td>Phase 3 Integration</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Slide 5 / 7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 6: The Solution & Technical Architecture
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div>
+      <span class="tag">5. Solution & Architecture</span>
+      <h1 class="title">GCC Atlas: Deterministic Math + Grounded AI</h1>
+      <p class="subtitle">A production-grade dual-engine platform connected live to Supabase & OpenRouter</p>
+
+      <div class="grid-3" style="margin-top: 15px;">
+        <div class="card">
+          <div style="font-size: 13pt; font-weight: 700; color: #0F766E; margin-bottom: 8px;">1. Plan Wizard (Inputs)</div>
+          <p style="font-size: 10pt; color: #4A5D7E; line-height: 1.5;">
+            Collects target functions (Tech, Finance, Ops), 1-yr & 3-yr headcount, seniority ratio, and user-assigned factor weights (1–5) across talent, rent, and costs.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size: 13pt; font-weight: 700; color: #0F766E; margin-bottom: 8px;">2. Deterministic Core</div>
+          <p style="font-size: 10pt; color: #4A5D7E; line-height: 1.5;">
+            Calculates Min-Max normalized scores across 45 candidate cities. Missing data is never guessed; scores are 100% reproducible and immune to LLM hallucination.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size: 13pt; font-weight: 700; color: #0F766E; margin-bottom: 8px;">3. Side-by-Side Compare</div>
+          <p style="font-size: 10pt; color: #4A5D7E; line-height: 1.5;">
+            Compares 2 to 5 locations across identical metrics: GCCPROs verified center counts, Randstad salary tiers, and JLL Grade A office rates.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size: 13pt; font-weight: 700; color: #0F766E; margin-bottom: 8px;">4. Cost Scenario Engine</div>
+          <p style="font-size: 10pt; color: #4A5D7E; line-height: 1.5;">
+            Bottom-up modeling combining verified annual FTE salaries and Grade A office leases with an explicit exclusions audit trail.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size: 13pt; font-weight: 700; color: #0F766E; margin-bottom: 8px;">5. Ask Atlas AI (RAG)</div>
+          <p style="font-size: 10pt; color: #4A5D7E; line-height: 1.5;">
+            Conversational assistant grounded in Supabase records via OpenRouter (Gemini Flash 1.5) with mandatory source citations and honest refusals.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size: 13pt; font-weight: 700; color: #0F766E; margin-bottom: 8px;">6. Live Supabase Layer</div>
+          <p style="font-size: 10pt; color: #4A5D7E; line-height: 1.5;">
+            16 Supabase tables with 45 cities, 112 location metrics, 77 salary rows, 71 candidate evidences, and NSWS statutory approval prompts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Slide 6 / 7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SLIDE 7: Positioning & 3-Year Vision
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div>
+      <span class="tag">6. Positioning & Roadmap</span>
+      <h1 class="title">Strategic Positioning & 3-Year Growth</h1>
+      <p class="subtitle">Becoming the definitive Bloomberg for India's Global Capability Centres</p>
+
+      <div class="table-container" style="margin-top: 10px; margin-bottom: 20px;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">Stakeholder</th>
+              <th style="width: 35%;">Alternative Used Today</th>
+              <th style="width: 40%;">Why They Choose GCC Atlas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Corporate Strategy & CFOs</strong></td>
+              <td>Static $200k consultant reports, broker pitch decks</td>
+              <td><span style="color: #0F766E; font-weight: 600;">Deterministic scenario modeling, audit-ready source citations, 6-minute shortlists.</span></td>
+            </tr>
+            <tr>
+              <td><strong>Talent & HR Leadership</strong></td>
+              <td>Recruiter claims & generic national salary PDFs</td>
+              <td><span style="color: #0F766E; font-weight: 600;">Indexed Randstad benchmarks by seniority tier across 27+ candidate cities.</span></td>
+            </tr>
+            <tr>
+              <td><strong>Real Estate Directors</strong></td>
+              <td>Landlord brochures & delayed broker market tours</td>
+              <td><span style="color: #0F766E; font-weight: 600;">Quarterly JLL Grade A rent ranges, office vacancy %, and net leasing absorption.</span></td>
+            </tr>
+            <tr>
+              <td><strong>Tier-2 State Governments</strong></td>
+              <td>Expensive foreign delegation roadshows</td>
+              <td><span style="color: #0F766E; font-weight: 600;">Equal-footing discovery in the 45-city candidate set backed by Zinnov lower bounds.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="border-top: 3px solid #0F766E;">
+          <div style="font-size: 11pt; font-weight: 700; color: #0F766E; margin-bottom: 4px;">Phase 1: Location Wedge (Months 1–6)</div>
+          <p style="font-size: 9pt; color: #4A5D7E; line-height: 1.4;">
+            Free decision tool, 45 candidate cities, deterministic rankings, Ask Atlas AI. Build dominant search volume and enterprise habit.
+          </p>
+        </div>
+        <div class="card" style="border-top: 3px solid #0F766E;">
+          <div style="font-size: 11pt; font-weight: 700; color: #0F766E; margin-bottom: 4px;">Phase 2: Enterprise SaaS (Months 6–18)</div>
+          <p style="font-size: 9pt; color: #4A5D7E; line-height: 1.4;">
+            Custom role-specific compensation modeling, proprietary pipeline signals, and verified provider delivery profiles ($15k–$35k ARR).
+          </p>
+        </div>
+        <div class="card" style="border-top: 3px solid #0F766E;">
+          <div style="font-size: 11pt; font-weight: 700; color: #0F766E; margin-bottom: 4px;">Phase 3: GCC Operating System (Months 18–36)</div>
+          <p style="font-size: 9pt; color: #4A5D7E; line-height: 1.4;">
+            Downstream transaction enablement: commercial real estate RFPs, managed legal incorporation sandboxes, and state investment portals.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>GCC Atlas — Product Strategy Memo</span>
+      <span>Slide 7 / 7</span>
+    </div>
+  </div>
+
+</body>
+</html>
